@@ -1,24 +1,26 @@
-import React, { useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import HeroSection from './components/HeroSection';
-import PortfolioSection from './components/PortfolioSection';
-import ContactPopup from './components/ContactPopup';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home'; // Asegúrate de que el nombre del archivo en el sistema de archivos sea 'Home.js'
+import About from './pages/About'; // Asegúrate de que el nombre del archivo en el sistema de archivos sea 'About.js'
+import Work from './pages/Work'; // Asegúrate de que el nombre del archivo en el sistema de archivos sea 'Work.js'
+import Navbar from './components/Navbar'; // Asegúrate de que el nombre del archivo en el sistema de archivos sea 'Navbar.js'
+import Footer from './components/Footer'; // Asegúrate de que el nombre del archivo en el sistema de archivos sea 'Footer.js'
 
-function App() {
-  const [isPopupOpen, setPopupOpen] = useState(false);
-
+const App = () => {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<HeroSection onConnectClick={() => setPopupOpen(true)} />} />
-        <Route path="/work" element={<PortfolioSection />} />
-        {/* Define additional routes here */}
-      </Routes>
-      {isPopupOpen && <ContactPopup onClose={() => setPopupOpen(false)} />}
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/work" element={<Work />} />
+          {/* Agrega más rutas según sea necesario */}
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
-}
+};
 
 export default App;
