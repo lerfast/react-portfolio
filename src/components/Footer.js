@@ -1,22 +1,21 @@
 import React from 'react';
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="bg-gray-900 text-white text-center p-4">
-      <p>José Berbesi. 2024</p>
-      <p>V1.1</p>
-      {/* Agrega aquí los enlaces a las redes sociales con los iconos de Font Awesome */}
-      <div className="flex justify-center items-center space-x-4">
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
+    <footer className="bg-black text-white text-center p-4">
+      <div>José Berbesi. 2024</div>
+      <div>V1.1</div>
+      {/* Icons */}
+      <div className="flex justify-center space-x-4 mt-4">
+        <a href="https://linkedin.com/in/yourprofile" aria-label="LinkedIn" className="hover:text-gray-300">
+          {/* Replace with LinkedIn SVG or font-awesome icon */}
           <i className="fab fa-linkedin-in"></i>
         </a>
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/yourprofile" aria-label="GitHub" className="hover:text-gray-300">
+          {/* Replace with GitHub SVG or font-awesome icon */}
           <i className="fab fa-github"></i>
         </a>
-        {/* Puedes agregar más iconos sociales si es necesario */}
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}
